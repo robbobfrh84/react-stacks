@@ -9,7 +9,7 @@ function App() {
         <h3> ✨ Example hosted from Main's github "react-stacks" repository ✨ </h3>
         <p> 
           See&nbsp;
-          <a href='https://github.com/robbobfrh84/react-stacks/gh-pages-static-react'>
+          <a href='https://github.com/robbobfrh84/react-stacks/tree/main/gh-pages-static-react'>
             gh-pages-static-react
           </a>
           &nbsp;subfolder for source code and more info... 
