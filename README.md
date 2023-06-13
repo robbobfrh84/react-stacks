@@ -1,2 +1,2 @@
 # react-stacks
-This repository is dedicated to developing "proof of concepts" and testing the React library, add-ons, and stacks. 
+This repository is dedicated to developing, testing and deploying "proof of concepts" of the React library, it's add-ons, and stacks. 
