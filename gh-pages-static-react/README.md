@@ -21,11 +21,12 @@ Setup
 - $`npm install gh-pages --save-dev`
 - Open `package.json`
 - Add a homepage property in this format `https://{username}.github.io/{repo-name}/{subfolder-name}`
+  - NOTE: This isn't connected to the actual folder you host the build code. Because the `npm run deploy` command builds it in a different branch.
   ```diff
   {
     "name": "my-app",
     "version": "0.1.0",
-  + "homepage": "https://robbobfrh84.github.io/react-stacks/gh-pages-static-react",
+  + "homepage": "https://robbobfrh84.github.io/react-stacks",
     "private": true,
   ```
 - Add `predeploy` and `deploy` scripts...
