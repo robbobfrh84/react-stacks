@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <h3> ✨✨ Example hosted from Main's github "react-stacks" repository ✨✨ </h3>
+        <h3> ✨✨✨ Example hosted from Main's github "react-stacks" repository ✨✨✨ </h3>
         <p> 
           See&nbsp;
           <a href='https://github.com/robbobfrh84/react-stacks/tree/main/gh-pages-static-react'>
