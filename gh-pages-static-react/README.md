@@ -1,12 +1,26 @@
 # Using github's gh-pages to host a static react webapp
-This example was created by following this example...
-- https://github.com/gitname/react-gh-pages
+Overview
+- **Setup Journal:** step-by-step guide for deploying to gh-pages.
+- **Testing build folder locally:** how to test static `build` specific deployments. 
+  - You may want to have a static version and a dyanmic version of your webapp. This allows you test write code that makes those two versions behave differently, while sharing the same code base. 
+- **🌟 Important Notes**: 
+  - The app being hosted can live in whatever folder/sub-folder you prefer. 
+  - It's the `npm run deploy` (`"deploy":...`) command AND the `"homepage": "<url>"` value, both within the package.json that tells github what folder/subfolder to deploy. 
+    - So, YES, you can host multiple react apps, by targeting multiple subfolders
 
-## Additional Setup notes, and journal.  
-Note: these notes are more closely related to what I did and some steps from the resource above will be off. So, this guide is better to follow if you trying the do the same thing here. 
-- Specifically hosting the static react app in a subfolder. 
+  - 🌟 This example matches the endpoint pattern, BUT that isn't necessary. So be careful as testing could get really confusing if you're mixing them!
 
-Here are my versions vs. the guides...
+ - **Also:** I only nested `my-app` in this folder to preserve original `README.md` within app folder.
+
+<br/>
+
+----
+# Setup journal.  
+This example was created from the following this "guide": https://github.com/gitname/react-gh-pages
+
+- **Note:** the following notes may differ from the guide linked above, as I wanted to include subfolders. 
+
+Here are my versions vs. the "guide"'s...
 - $`node --version` > v14.16.1 ...guide was v16.13.2
 - $`npm --version` > 8.6.0 ...guide was 8.1.2
 - $`git --version` > 2.37.1 (Apple Git-137.1 ) ...git version 2.29.1.windows.1
@@ -14,13 +28,14 @@ Here are my versions vs. the guides...
 This example will live in the sub folder `gh-pages-static-react`
 - So I created that and `cd` into it, then
 - $`npx create-react-app my-app` ! 
-- 👀 Decided to do the default app reather than the typscript template as the guide did.
+- 👀 Decided to do the default app rather than the typescript template as the guide did. Just wanted to keep it as simple as possible as a fallback example.
 
 Setup
 - $`cd my-app`
 - $`npm install gh-pages --save-dev`
 - Open `package.json`
-- Add a homepage property in this format `https://{username}.github.io/{repo-name}/{subfolder-name}`
+- Add a homepage property in this format `https://{username}.github.io/{repo-name}/`
+- Or, for subpage format `https://{username}.github.io/{repo-name}/{subfolder-name}/`
   - NOTE: This isn't connected to the actual folder you host the build code. Because the `npm run deploy` command builds it in a different branch.
   ```diff
   {
@@ -47,4 +62,16 @@ Deploy the app to github....
 - Pushing changes to `main` branch won't redeploy you must also run...
 - $`npm run deploy` to see live changes...
 
-!!! BOB, if cleandeploy worked, let's add that to a troubleshoot here.
+<br/>
+
+----
+# Testing build folder locally
+
+- Copy `"homepage": "https://robbobfrh84.github.io/react-stacks/",` from package.json
+- Save it somewhere reliable. 
+  - You CAN note it out, but it's just annoying. 
+  - looks like this `"//": [ "homepage", "https://robbobfrh84.github.io/react-stacks/" ],`
+- REMOVE `"homepage": "https://robbobfrh84.github.io/react-stacks/",`
+- `npm install -g serve` 
+- `serve -s build`
+
