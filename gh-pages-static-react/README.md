@@ -5,10 +5,10 @@ Overview
   - You may want to have a static version and a dyanmic version of your webapp. This allows you test write code that makes those two versions behave differently, while sharing the same code base. 
 - **🌟 Important Notes**: 
   - The app being hosted can live in whatever folder/sub-folder you prefer. 
-  - It's the `npm run deploy` (`"deploy":...`) command AND the `"homepage": "<url>"` value, both within the package.json that tells github what folder/subfolder to deploy. 
-    - So, YES, you can host multiple react apps, by targeting multiple subfolders
+  - It's the `npm run deploy` (`"deploy":...`) command AND the `"homepage": "<url>"` value, both within the package.json that tells Github what `repo/sub-page` to deploy. 
+    - So, YES, you can host multiple react apps, by targeting a different `/sub-page`.
 
-  - 🌟 This example matches the endpoint pattern, BUT that isn't necessary. So be careful as testing could get really confusing if you're mixing them!
+  - 🌟 This example matches `sub-page` with `sub-folder`, but notice it's even nested in `my-app`!
 
  - **Also:** I only nested `my-app` in this folder to preserve original `README.md` within app folder.
 
@@ -35,7 +35,7 @@ Setup
 - $`npm install gh-pages --save-dev`
 - Open `package.json`
 - Add a homepage property in this format `https://{username}.github.io/{repo-name}/`
-- Or, for subpage format `https://{username}.github.io/{repo-name}/{subfolder-name}/`
+- Or, for **sub-page** format `https://{username}.github.io/{repo-name}/{sub-page-name}/`
   - NOTE: This isn't connected to the actual folder you host the build code. Because the `npm run deploy` command builds it in a different branch.
   ```diff
   {
@@ -45,6 +45,9 @@ Setup
     "private": true,
   ```
 - Add `predeploy` and `deploy` scripts...
+  
+  - For subfolder, deploy example: `"deploy": "gh-pages -d build -e "`
+  
   ```diff
     "scripts": {
   +   "predeploy": "npm run build",
