@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8b134795f918c98487fa67f03b05e63e",
+    "revision": "7c805c9a52ff78f88c629671bc93176c",
     "url": "/react-stacks/kts-webapp/index.html"
   },
   {
