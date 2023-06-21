@@ -1,12 +1,15 @@
-# Using github's gh-pages to host a static react webapp
+## Using gh-pages to host a static react app
+
+### And, how to manage root page and subpages for multiple react apps :)
+
 Overview
-- **Setup Journal:** step-by-step guide for deploying to gh-pages.
+- **Setup Journal:** step-by-step guide for deploying to gh-pages from a "from-scratch" react app.
 - **Testing build folder locally:** how to test static `build` specific deployments. 
-  - You may want to have a static version and a dyanmic version of your webapp. This allows you test write code that makes those two versions behave differently, while sharing the same code base. 
+  - You may want to have a static version and a dyanmic version of your webapp. This allows you test write code that makes those two versions behave differently, while sharing the same code base. This section explains how you can test those differences locally. 
 - **🌟 Important Notes**: 
   - The app being hosted can live in whatever folder/sub-folder you prefer. 
   - It's the `npm run deploy` (`"deploy":...`) command AND the `"homepage": "<url>"` value, both within the package.json that tells Github what `repo/sub-page` to deploy. 
-    - So, YES, you can host multiple react apps, by targeting a different `/sub-page`.
+    - So you can host multiple react apps, by targeting a different `/sub-page`.
 
   - 🌟 This example matches `sub-page` with `sub-folder`, but notice it's even nested in `my-app`!
 
