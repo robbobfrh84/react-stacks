@@ -28,6 +28,7 @@ class App extends Component {
     showGame: true,
     gameLoaded: false,
     signUpLogIn: false,
+    pathname: window.location.pathname.split("/").filter(x => x!=="").join("/"),
     fn: (func, params)=>{this[func](params)},
     set: (params)=>{ this.setState(params)}
   }
@@ -50,10 +51,11 @@ class App extends Component {
   }
 
   render() {
+    console.log('this.state.pathname:',this.state.pathname)
     return (
       <div className="app">
 
-        <BrowserRouter>
+        <BrowserRouter basename={this.state.pathname}>
 
           <Route
             render={route => <Menu {...route}
