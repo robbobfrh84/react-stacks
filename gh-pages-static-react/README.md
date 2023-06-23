@@ -65,7 +65,10 @@ Setup
 - Check that the app works. $`npm start` ...Maybe change some code?
 
 Deploy the app to github....
-- $`npm run deploy`  👀This by default added the gh-pages. 
+- $`npm run deploy`  👀 This by default added the gh-pages. 
+
+See 👀: "homepage" example with links to sub-pages
+- https://robbobfrh84.github.io/react-stacks/
 
 #### REMEMBER
 - Pushing changes to `main` branch won't redeploy you must also run...

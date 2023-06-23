@@ -51,7 +51,11 @@ class App extends Component {
   }
 
   render() {
-    console.log('this.state.pathname:',this.state.pathname)
+    //
+    //
+    console.log('process.env:',process.env)
+    //
+    //
     return (
       <div className="app">
 
