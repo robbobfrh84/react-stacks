@@ -1,6 +1,6 @@
 
 ### Getting started
-* $`git clone` 
+* Copy this folder's contents into an empty project folder.
 * $`npm install`
 * $`npm start`
 

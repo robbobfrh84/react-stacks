@@ -10,8 +10,6 @@
 # our-curiosity
 Fan and observation page for NASA's Curiosity Rover.
 
-Heroku Link: https://our-curiosity.herokuapp.com/
-
 # Steps to Development
 
 Download Robo 3T for localhost mongoDB viewing/editing
