@@ -74,6 +74,8 @@ See 👀: "homepage" example with links to sub-pages
 - Pushing changes to `main` branch won't redeploy you must also run...
 - $`npm run deploy` to see live changes...
 
+🚨AND!!! make sure githubs Settings > Pages is set to gh-pages
+
 <br/>
 
 ----
