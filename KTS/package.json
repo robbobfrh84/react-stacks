@@ -1,0 +1,38 @@
+{
+  "name": "kiss_the_sky",
+  "version": "1.0.0",
+  "description": "A unique evolution video game. At its heart is a programmatic replica of Mendelian genetics, and the gameplay is based on real-time Darwinian selection. You can either compete to breed a flower that reaches the sky, or let ambient mode play out for hours or days or weeks.",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node seed/index.js $ARG",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
+    "//": "NOTE: Make sure to && npm run seed manifest to heroku-postbuild to set/reset seed data: example 'npm run build && npm run seed restore'"
+  },
+  "author": "Matthew Main & Bob Main",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^2.0.3",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "if-env": "^1.0.4",
+    "jquery": "^3.4.1",
+    "mongoose": "^5.6.7",
+    "mongoose-unique-validator": "^2.0.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "react-transition-group": "^4.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "gh-pages": "^5.0.0",
+    "nodemon": "^1.19.1"
+  }
+}

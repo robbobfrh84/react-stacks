@@ -1,0 +1,116 @@
+.leaderboard *
+  font-family: "Dosis", Avenir, sans-serif
+.leaderboard
+  position: absolute
+  max-width: 768px
+  text-align: center
+  color: #D8D8D8
+  z-index: 2
+  margin: auto
+  padding: 0
+  padding-top: 80px
+  top: 0px
+  left: 0px
+  right: 0px
+  padding-bottom: 20px
+  .leaderboard-header
+    font-size: 35px
+    font-weight: 400
+    letter-spacing: 1.5px
+  .leaderboard-subtitle
+    font-size: 16px
+    font-weight: 300
+    letter-spacing: 0.6px
+    margin-top: -5px
+  .leaderboard-levels
+    margin-top: 50px
+    .active
+      background-color: #383535
+      border-radius: 3px
+      .level
+        background-color: #006604
+    .container
+      padding: 20px
+      .link
+        text-decoration: none
+        cursor: pointer !important
+      .level
+        border: 2px solid #006604
+        text-align: left
+        padding: 10px
+        margin-bottom: 20px
+        height: 55px
+        border-radius: 3px
+        color: #D8D8D8
+        font-size: 20px
+        line-height: 15px
+        font-weight: 500
+        .subtitle
+          font-size: 9px
+          padding-top: 7px
+          font-weight: 200
+      .level:hover
+        opacity: 0.7
+  .leaderboard-ranks
+    position: relative
+    margin-top: -22px
+    padding: 35px
+    padding-bottom: 20px
+    border-radius: 5px
+    font-size: 18px
+    font-weight: 300
+    background-color: #383535
+    .left-col
+      text-align: left
+      margin-bottom: 10px
+      .username, .date, .rank
+        display: inline-block
+      .rank
+        width: 40px
+      .flower-avatar-container
+        display: inline-block
+        position: relative
+        top: -2px
+        margin-left: -5px
+        padding-bottom: 12px
+      .date
+        position: absolute
+        right: 0px
+        padding-top: 10px
+        margin-right: 20px
+    .right-col
+      padding-right: 20px
+      text-align: right
+      padding-top: 10px
+    .paginate
+      border: none
+      width: 45px
+      height: 40px
+      border-radius: 5px
+      margin: 5px 9px
+      margin-top: 30px
+      cursor: pointer
+    .disable
+      opacity: 0.2
+      pointer-events: none
+    .arrow
+      margin-top: -5px
+      width: 15px
+      color: #202020
+    .left
+      transform: rotate(-90deg)
+    .right
+      transform: rotate(90deg)
+
+@media only screen and (max-width: 768px)
+  .leaderboard
+    padding-top: 140px
+    .leaderboard-levels
+      .container
+        .level
+          margin-bottom: 0px
+    .leaderboard-ranks
+      margin-top: 15px
+      .right-col
+        margin-top: -20px
+        margin-bottom: 20px
