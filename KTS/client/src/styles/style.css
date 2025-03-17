@@ -4,8 +4,9 @@
 
 
 html, body {
-  position: fixed;
-  overflow: hidden;
+  /* position: fixed; 
+  overflow: hidden; */
+  /* NOTED those above out in 3/2025 because they blocked scrolling on long leaderboard screen. I'm sure they were there to do something, but it broke scrolling. */
   width: 100vw;
   height: 100vh;
 }

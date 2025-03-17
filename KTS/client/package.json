@@ -1,7 +1,7 @@
 {
   "name": "Kiss_The_Sky",
   "version": "0.1.0",
-  "homepage": "https://matthewmain.github.io/kiss_the_sky/",
+  "homepage": "/",
   "private": true,
   "proxy": "http://127.0.0.1:3004/",
   "dependencies": {

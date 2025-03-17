@@ -28,7 +28,7 @@ class App extends Component {
     showGame: true,
     gameLoaded: false,
     signUpLogIn: false,
-    pathname: window.location.pathname.split("/").filter(x => x!=="").join("/"),
+    pathname: window.location.pathname,
     fn: (func, params)=>{this[func](params)},
     set: (params)=>{ this.setState(params)}
   }
@@ -38,6 +38,7 @@ class App extends Component {
     window.updateUI(); // Deployment needs this for public to load start screen
     Manifest.getManifest(this.state)
     User.getUser(this.state)
+    this.setState({ pathname: window.location.pathname })
   }
 
   handleHash(hashGiven){
@@ -51,15 +52,10 @@ class App extends Component {
   }
 
   render() {
-    //
-    //
-    console.log('process.env:',process.env)
-    //
-    //
     return (
       <div className="app">
 
-        <BrowserRouter basename={this.state.pathname}>
+        <BrowserRouter>
 
           <Route
             render={route => <Menu {...route}
