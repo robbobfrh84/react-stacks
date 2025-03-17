@@ -1,36 +1,56 @@
 # Development Setup Notes
+- * Last reviewed on new macbook air (2023 M2 chip) in March 2025.
 
 ### Overview
 This is a MERN (Mongodb, Express, React, Node) Application, and here are the required installations...
 - Node JS: https://nodejs.org/en/download/
 - MongoDb:
   - Download: https://treehouse.github.io/installation-guides/mac/mongo-mac.html
+    - This guide may be a bit out of date for newer macs. (note: 03/25)
   - Info: https://www.mongodb.com/
   - Recommended software for visualizing database (not required)
     - Robo 3T: https://robomongo.org/download
   - Recommended software for testing API requests
     - postman: https://www.getpostman.com/
 
+### Installing mongo DB using brew
+
+Start by updating brew: $`brew update`, then...
+- $`brew tap mongodb/brew`
+- $`brew install mongodb-community`
+- $`brew services start mongodb-community` (optional)
+
+Create a local folder to store local database content for testing
+- Either
+  - $`mkdir -p /data/db` for Intel macs
+- OR
+  - $`mkdir -p ~/data/db` for Silicon Macs (M1,M2,etc...)
+
 ### Getting Started
-Once you have all the required software install.
-- Run $`mongod` (don't forget the `d`) in your bash.
-  - This will create a mongodb deamon running in your OS background.
-  - The first time you do this, the output will likely hang.
-- In a new window, run $`mongo` (NO `d` this time) to test that it's running
-  - If setup correctly, your command line will now show the `>` symbol
-  - From here, you can run mongodb commands.
-  - NOTE, running `mongo` is a way to test your mongodb deamon, you likely wont do any work directly in this command line, and can close it while developing
+Once you have all the required software installed. We now need to start a Mongo DB Daemon running in the background of your os for node JS to interact with. To boot that up run...
+- Either
+  - $`mongod` for Intel macs
+- OR
+  - $`mongod --dbpath ~/data/db` for Silicon Macs (M1,M2,etc...)
+- This start the mongod db daemon!
+- In a new window, run $`mongosh` to test that it's running
+  - If setup correctly, your command line will now show the `>` symbol. If not. something wasn't set up correctly :(.
+  - From here, you can run mongodb commands. 
+  - Close this cli with `exit()`
+  - NOTE, running $`mongosh` is a way to test your mongodb deamon, you likely wont do any work directly in this command line, and can close it while developing. BUT leave the $`mongod` window running. 
 
-### Seed your database
+Open a new terminal window to install the app dependencies and create the build environment.
+- Navagate into this folder at this root level using $`cd`, then...
+  - $`npm install`
+  - $`npm run seed all` (Optional: If you want to start with all seed data)
+  - $`npm start` 🔥 should open a new tab in your browser. 
+
+### Seeding your database
 The application may behave oddly if you haven't seeded any data.
-- From the within the `webapp` folder, run $`npm run seed reset`
-  - NOTE: there are other specific seeds, but $`npm run seed reset` will restore all seeds for basic testing.
-  - OR: you can just run $`npm run seed manifest` if you don't want any seeds, just basic
+- SEED ALL From the within the `KTS` folder, run $`npm run seed all`
+- REMOVE all data with $`npm run seed delete`.
+- See: `seed/index.js` for more seeding options.
 - WARNING! You will lose any saved data locally when running these commands.
-
-Finally, start your local development environment
-- Do this within the `/webapp` folder (NOT inside the `/client`)
-- Run $`npm start`
 
 Your Front End should now be serving to `http://localhost:3003`
 
@@ -47,19 +67,12 @@ Port in use error.
   - Run $`kill -QUIT PID`
   - Example: $`kill -QUIT 23451` (NOTE: number character length may vary.)
 
+
 ----
-# Deployment Notes
-
-Deploy to Heroku as sub-folder (from the top level)
-- `git subtree push --prefix webapp heroku master`
-
-Location
-- primary: [kissthesky.app](https://www.kissthesky.app) 
-- heroku direct: [kiss-the-sky.herokuapp.com](https://kiss-the-sky.herokuapp.com)
-
 # Resources
+
+See outdated live version of webapp (Front end only):
+- https://matthewmain.github.io/kiss_the_sky/
 
 Favicon Generator:
 - https://realfavicongenerator.net/favicon_result?file_id=p1d6lj02mpfts1l8i1voptk91iaa6#.XJZg1-tKjOR
-
------

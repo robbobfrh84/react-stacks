@@ -1,6 +1,4 @@
 const db = require("../models")
-const manifestController = require("./manifestController")
-const mongoose = require("mongoose")
 const passport = require('../passport')
 
 const UserControllers = {

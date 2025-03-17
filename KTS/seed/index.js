@@ -18,7 +18,7 @@ switch (seed) {
   case "users": User.seedUsers(logSeed, false); break
   case "winners": Winner.seedWinners(logSeed, false); break
   case "saved": Saved.seedSaved(logSeed, false); break
-  case "reset":
+  case "all":
     User.seedUsers(logSeed, ()=>{
       Winner.seedWinners(logSeed, ()=>{
         Saved.seedSaved(logSeed, ()=>{
@@ -27,7 +27,7 @@ switch (seed) {
       })
     })
     break
-  case "restore":
+  case "delete":
     db.User.deleteMany({})
       .then(() => db.Winner.deleteMany({}) )
       .then(() => db.Saved.deleteMany({}) )
