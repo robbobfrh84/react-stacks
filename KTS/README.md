@@ -1,22 +1,16 @@
 ## "Kiss the Sky" A Web App Ambience Game
-- **Full-Stack MERN Architecture:** 
+- **Full-Stack MERN Application:** 
   - Combines MongoDB, Express, React, and Node.js for a robust web application.
-- **MVC Back-End Design:** 
+- **MVC Back-End Design Pattern:** 
   - Implements Model, View, and Controller separation to streamline business logic and data management.
-
 - **RESTful API Integration:** 
   - Enables CRUD operations and efficient data flow.
-
 - **Authentication with Passport.js:** 
   - Manages secure user authentication and session handling.
-
 - **Responsive UI/UX:** 
   - Leverages React for dynamic, interactive interfaces.
-
 - **Deployment Ready:** 
   - Supports easy setup, testing, and production deployment.
-
-
 
 # Development Setup Notes
 * NOTE: Last reviewed on new MacBook air (2023 M2 chip) in March 2025.
