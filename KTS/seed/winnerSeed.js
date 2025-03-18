@@ -5,15 +5,15 @@ const Winner = {
 
   seedWinners: (seedLogger, next)=>{
     const usernames = [
-      "Endicott64",
+      "Retro64",
       "thebodhisattva",
       "scooby",
-      "PappasOnPromNight",
-      "carnubaWaxxx",
-      "Grommet_and_die",
+      "Pappas",
+      "carnubaWax",
+      "LakeMerritt",
       "JUtah88",
-      "richardMNixon",
-      "WARCHILD666",
+      "SourdoughGrow",
+      "EARTHCHILD",
       "dev",
       "ReferenceError",
     ]
